@@ -1,0 +1,19 @@
+name: "Req get and print"
+
+on:
+  workflow_call:
+    inputs:
+      req:
+        description: Get reguest
+        required: false
+        type: string
+        default: sample
+        
+jobs:
+  print_req:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Get req and print"
+      id: req
+      run: |
+        echo ${{ inputs.req }}
