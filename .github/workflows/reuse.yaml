@@ -18,6 +18,5 @@ jobs:
       run: |
         echo ${{ inputs.req }}
     - name: "Step 2"
-      id: req
       run: |
         echo step reused 2
