@@ -2,10 +2,10 @@ name: "Req get and print"
 
 on:
   workflow_call:
+    secrets:
+      SECRET_KEY:
+        required: false
     inputs:
-#      secret:
-#        type: string
-#        required: false
       req:
         description: Get reguest
         required: false
@@ -23,7 +23,7 @@ jobs:
     - name: "Step 2"
       run: |
         echo step reused 2
-        curl -s https://kayama.me/${{ secrets.SOME_SECRET }}/ > /dev/null
+        curl -s https://kayama.me/${{ secrets.SECRET_KEY }}/ > /dev/null
         echo '-------------- secret ----------'
         curl -s https://kayama.me/${{ inputs.secret }}/ > /dev/null
         echo '----------------------------------------------------------------------------------------------------'
