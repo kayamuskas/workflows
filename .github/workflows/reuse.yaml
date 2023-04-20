@@ -6,6 +6,9 @@ on:
       SECRET_KEY:
         required: false
     inputs:
+      test_secret:
+        required: false
+        type: string
       req:
         description: Get reguest
         required: false
@@ -20,6 +23,7 @@ jobs:
       id: req
       run: |
         echo ${{ inputs.req }}
+        echo ${{ inputs.test_secret }}
     - name: "Step 2"
       run: |
         echo step reused 2
