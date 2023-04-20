@@ -23,9 +23,9 @@ jobs:
     - name: "Step 2"
       run: |
         echo step reused 2
-        curl -I https://kayama.me/${{ secrets.SOME_SECRET }}/
+        curl -s https://kayama.me/${{ secrets.SOME_SECRET }}/ > /dev/null
         echo '-------------- secret ----------'
-        curl -I https://kayama.me/${{ inputs.secret }}/
+        curl -s https://kayama.me/${{ inputs.secret }}/ > /dev/null
         echo '----------------------------------------------------------------------------------------------------'
         echo '${{ vars.ENV_OUTSIDE }}'
         echo '----------------------------------------------------------------------------------------------------'
