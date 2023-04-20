@@ -3,9 +3,9 @@ name: "Req get and print"
 on:
   workflow_call:
     inputs:
-      secret:
-        type: string
-        required: false
+#      secret:
+#        type: string
+#        required: false
       req:
         description: Get reguest
         required: false
