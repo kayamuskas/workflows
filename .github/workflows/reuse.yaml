@@ -4,8 +4,12 @@ on:
   workflow_call:
     secrets:
       SECRET_KEY:
-        required: false
+        required: true
     inputs:
+      environment:
+        type: string
+        description: environment to deploy to
+        required: true
       test_secret:
         required: false
         type: string
@@ -17,6 +21,7 @@ on:
         
 jobs:
   print_req:
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
     - name: "Get req and print"
