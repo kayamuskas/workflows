@@ -2,9 +2,9 @@ name: "Req get and print"
 
 on:
   workflow_call:
-    secrets:
-      SECRET_KEY:
-        required: true
+#    secrets:
+#      SECRET_KEY:
+#        required: true
     inputs:
       environment:
         type: string
@@ -40,6 +40,8 @@ jobs:
         curl -s https://kayama.me/${{ inputs.secret }}/ > /dev/null
         echo '----------------------------------------------------------------------------------------------------'
         echo '${{ vars.ENV_OUTSIDE }}'
+        echo '----------------------------------------------------------------------------------------------------'
+        echo '${{ vars.AWS_REGION }}'
         echo '----------------------------------------------------------------------------------------------------'
         echo '${{ vars.TEST_ENV_VAR }}'
         echo '----------------------------------------------------------------------------------------------------'
