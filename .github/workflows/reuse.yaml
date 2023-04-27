@@ -27,8 +27,8 @@ on:
 env:
   TARGET_ENVIRONMET: >
     ${{ fromJson('{
-      "Development": "dev",
-      "Production": "prod"
+      "Development": "env_1",
+      "Production": "env_2"
     }')[github.event.inputs.environment] }}
 
 jobs:
