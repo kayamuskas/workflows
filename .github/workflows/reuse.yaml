@@ -45,4 +45,4 @@ jobs:
           echo "Service name: service-$service"
       - run: |
           echo $TARGET_ENVIRONMET
-          echo ${{ ($inputs.environment == 'Development') && 'dev' || 'prod' }}
+          echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
