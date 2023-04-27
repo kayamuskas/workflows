@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: ${{ split(inputs.services, ',') }}
+        service: ${{ fromJson(inputs.services) }}
     steps:
       - name: Print service name
         run: |
