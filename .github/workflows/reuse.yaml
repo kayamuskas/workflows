@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [${{ inputs.services }}]
+        service: "[${{ inputs.services }}]"
         #service: ${{ fromJson(inputs.services) }} # it works!
     steps:
       - name: Print service name
