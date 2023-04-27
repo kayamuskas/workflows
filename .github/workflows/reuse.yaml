@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        services: ${{ inputs.services }}
+        services: ${{ fromJson(inputs.services) }}
     steps:
     - name: "Get req and print"
       id: req
