@@ -30,7 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: ${{ fromJson(inputs.services) }}
+        service: ${{ fromJson(toJson(inputs.services)) }}
+        #service: ${{ fromJson(inputs.services) }} # it works!
     steps:
       - name: Print service name
         run: |
