@@ -29,7 +29,7 @@ env:
     ${{ fromJson('{
       "Development": "env_1",
       "Production": "env_2"
-    }')[github.event.inputs.environment] }}
+    }')[inputs.environment] }}
 
 jobs:
   print_req:
@@ -45,3 +45,4 @@ jobs:
           echo "Service name: service-$service"
       - run: |
           echo $TARGET_ENVIRONMET
+          echo ${{ ($inputs.environment == 'Development') && 'dev' || 'prod' }}
