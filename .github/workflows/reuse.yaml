@@ -35,7 +35,6 @@ jobs:
       - name: Print service name
         run: |
           echo "Service name: service-$service"
-    steps:
     - name: "Get req and print"
       id: req
       run: |
