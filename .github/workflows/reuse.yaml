@@ -28,10 +28,14 @@ jobs:
   print_req:
     environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        services: ${{ inputs.services }}
     steps:
     - name: "Get req and print"
       id: req
       run: |
+        echo Nnnnnnnn
         echo ${{ inputs.req }}
         echo ${{ inputs.test_secret }}
     - name: "Step 2"
