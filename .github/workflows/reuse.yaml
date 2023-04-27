@@ -30,7 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        services: ${{ fromJson(inputs.services) }}
+        service: ${{ split(env.services, ',') }}
+    steps:
+      - name: Print service name
+        run: |
+          echo "Service name: service-$service"
     steps:
     - name: "Get req and print"
       id: req
