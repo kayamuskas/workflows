@@ -52,5 +52,5 @@ jobs:
       - name: Print some envs
         run: |
           for item in ${{ inputs.some_envs }}; do
-            echo $i
+            echo $item
           done
