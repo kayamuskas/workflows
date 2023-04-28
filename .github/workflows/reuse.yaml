@@ -51,7 +51,7 @@ jobs:
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
       - name: Print some envs
         shell: bash
-        env: ${{ inputs.some_envs }
+        env: ${{ inputs.some_envs }}
         run: |
           for i in ${{ inputs.some_envs }}; do echo $i; done
           env
