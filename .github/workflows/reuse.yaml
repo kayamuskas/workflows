@@ -51,4 +51,6 @@ jobs:
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
       - name: Print some envs
         run: |
-          for i in ${{ fromJSON(inputs.some_envs) }}; do echo $i; done
+          for i in ${{ inputs.some_envs }}; do echo $i; done
+         
+#for i in ${{ fromJSON(inputs.some_envs) }}; do echo $i; done
