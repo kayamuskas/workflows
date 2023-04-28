@@ -50,7 +50,10 @@ jobs:
           echo $TARGET_ENVIRONMET
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
       - name: Print some envs
+        shell: bash
+        env: ${{ inputs.some_envs }
         run: |
           for i in ${{ inputs.some_envs }}; do echo $i; done
+          env
          
 #for i in ${{ fromJSON(inputs.some_envs) }}; do echo $i; done
