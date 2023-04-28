@@ -45,15 +45,12 @@ jobs:
     steps:
       - name: Print service name
         run: |
-          echo "Service name: service-$service"
+          echo "Service name: service-${{ matrix.service }}"
       - run: |
           echo $TARGET_ENVIRONMET
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
       - name: Print some envs
-        shell: bash
-        env: ${{ fromJson(inputs.some_envs) }}
         run: |
-          for i in ${{ inputs.some_envs }}; do echo $i; done
-          env
-         
-#for i in ${{ fromJSON(inputs.some_envs) }}; do echo $i; done
+          for item in ${{ fromJson(inputs.some_envs) }}; do
+            echo $item
+          done
