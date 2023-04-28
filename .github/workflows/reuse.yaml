@@ -15,6 +15,9 @@ on:
         required: true
         type: string
         default: sample
+      some_envs:
+        required: true
+        type: string
       test_secret:
         required: false
         type: string
@@ -46,3 +49,6 @@ jobs:
       - run: |
           echo $TARGET_ENVIRONMET
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
+      - name: Print some envs
+        run: |
+          echo ${{ inputs.some_envs }}
