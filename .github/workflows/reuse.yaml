@@ -52,5 +52,7 @@ jobs:
       - name: Print some envs
         run: |
           for item in ${{ fromJson(inputs.some_envs) }}; do
-            echo $item
+            for innerItem in $item; do
+              echo $innerItem
+            done
           done
