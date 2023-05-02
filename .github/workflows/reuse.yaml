@@ -49,3 +49,15 @@ jobs:
       - run: |
           echo $TARGET_ENVIRONMET
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
+
+  my-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - data: ${{ fromJson(file('.github/workflows/data.json')) }}
+
+    steps:
+      - name: Print data
+        run: |
+          echo "Data: ${{ matrix.data }}"
