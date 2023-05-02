@@ -41,8 +41,7 @@ jobs:
     strategy:
       matrix:
         #service: ${{ toJson(file('services.yaml')) }}
-        #service: ${{ fromJson(inputs.services) }} # it works!
-        service: ${{ inputs.services }}
+        service: ${{ fromJson(inputs.services) }} # it works!
     steps:
       - name: Print service name
         run: |
@@ -50,9 +49,3 @@ jobs:
       - run: |
           echo $TARGET_ENVIRONMET
           echo ${{ ( inputs.environment == 'Development') && 'dev' || 'prod' }}
-      - name: Print some envs
-        run: |
-          echo ${{ inputs.some_envs }}
-#          for item in "${{ fromJson(inputs.some_envs) }}"; do
-#            echo $item
-#          done
