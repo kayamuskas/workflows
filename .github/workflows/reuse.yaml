@@ -41,7 +41,8 @@ jobs:
     strategy:
       matrix:
         #service: ${{ toJson(file('services.yaml')) }}
-        service: ${{ fromJson(inputs.services) }} # it works!
+        #service: ${{ fromJson(inputs.services) }} # it works!
+        service: ${{ inputs.services }}
     steps:
       - name: Print service name
         run: |
